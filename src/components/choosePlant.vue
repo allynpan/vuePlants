@@ -31,6 +31,15 @@
                         <el-button type="text" @click="deleteRow(scope.row)" size="small">删除</el-button>
                     </template>
                 </el-table-column>
+                <el-pagination
+                    @size-change="sizeChange"
+                    @current-change="currentChange"
+                    :current-page="currentPage"
+                    :page-sizes="[5, 10, 15, 20]"
+                    :page-size= pagesize
+                    layout="total, sizes, prev, pager, next, jumper"
+                    :total="length" background>
+                </el-pagination>
             </el-table>
             
             
@@ -45,7 +54,11 @@ export default {
     name:'choosePlant',
     data(){
         return{
-            chooseList:[]
+            chooseList:[],
+            username:'',
+            pagesize:5,
+            currentPage:1,
+            length:''
         }
     },
     methods:{
@@ -53,7 +66,10 @@ export default {
             alert("增加一个选园定植记录")
         },
         InitList(){
-            
+            this.$http.push('api/informationBefo/getPlantAndPlace',{username:this.username}).then(res=>{
+                console.log(res)
+                
+            })
         }
     },
     created(){
