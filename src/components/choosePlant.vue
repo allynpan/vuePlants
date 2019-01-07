@@ -31,7 +31,8 @@
                         <el-button type="text" @click="deleteRow(scope.row)" size="small">删除</el-button>
                     </template>
                 </el-table-column>
-                <el-pagination
+            </el-table>
+            <el-pagination
                     @size-change="sizeChange"
                     @current-change="currentChange"
                     :current-page="currentPage"
@@ -39,9 +40,7 @@
                     :page-size= pagesize
                     layout="total, sizes, prev, pager, next, jumper"
                     :total="length" background>
-                </el-pagination>
-            </el-table>
-            
+            </el-pagination>
             
         </div>
     </div>
