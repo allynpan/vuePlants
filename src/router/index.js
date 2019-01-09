@@ -10,6 +10,7 @@ import per_info from '@/components/per_info'
 import tsb_info from '../components/TSB_info'
 import plantation from '../components/plantation_info'
 import choosePlant from '../components/choosePlant'
+import placeRecord from '../components/placeRecord'
 Vue.use(Router)
 
 export default new Router({
@@ -48,15 +49,21 @@ export default new Router({
         hidden: true
       },
       {
-        path: '/plantation',
+        path: '/info/plantation',
         component: plantation,
         name: '果园信息',
         hidden: true
       },
       {
-        path: '/choosePlant',
+        path: '/info/choosePlant',
         component: choosePlant,
         name: '选园定植',
+        hidden: true
+      },
+      {
+        path: '/info/placeRecord',
+        component: placeRecord,
+        name: '果园信息记录表',
         hidden: true
       }]
     }]

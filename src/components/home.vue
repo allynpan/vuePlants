@@ -40,11 +40,13 @@
                     <template slot="title"><i class="el-icon-message"></i>农产品生产信息服务</template>
                     <el-menu-item-group>
                         <template slot="title">产前信息化</template>
-                        <el-menu-item index="/plantation">果园信息查询</el-menu-item>
-                        <el-menu-item index="/choosePlant">选园定植</el-menu-item>
+                        <el-menu-item index="/info/plantation">果园环境信息查询</el-menu-item>
+                        <el-menu-item index="/info/choosePlant">选园定植</el-menu-item>
+                        <el-menu-item index="/info/placeRecord">果园信息记录表</el-menu-item>
                     </el-menu-item-group>
                     <el-menu-item-group>
                         <template slot="title">产中信息化</template>
+                        
                     </el-menu-item-group>
                     <el-menu-item-group>
                         <template slot="title">产后信息化</template>
@@ -85,7 +87,7 @@ export default {
     },
     methods:{
         goPe_info(){
-            this.$router.push({path:'per_info',query:{username:this.username}})
+            this.$router.push({path:'/per_info',query:{username:this.username}})
         },
         exit(){
             this.$store.commit('logout')

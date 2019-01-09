@@ -8,11 +8,14 @@ import router from './router'
 import VueResource from 'vue-resource'
 import crypto from 'crypto'
 import store from './store'
+import { formatDate } from './unit/date.js'
 Vue.use(crypto)
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(VueResource)
 Vue.http.options.emulateJSON = true
+/* 这里注册一个全局的filter */
+Vue.filter('formatDate', formatDate)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
