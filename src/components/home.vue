@@ -24,19 +24,23 @@
         <el-row style="height:90%;">
             <el-col :span="4" style="background:#545c64;min-height:100%">
                 <el-menu  
-                :default-active="['1', '2']" 
+                :default-active="['1','2']" 
                 class="el-menu-demo"
                 background-color="#545c64"
                 text-color="#fff"
                 active-text-color="#ffd04b"
+                unique-opened
                 style="min-height: 100%;" router>
                     <el-submenu index="1" style="height:auto;">
+
                     <template slot="title"><i class="el-icon-message"></i>农产品生产技术服务</template>
                         <el-menu-item index="/Technology_before" >产前技术服务</el-menu-item>
                         <el-menu-item index="/Technology_Mid">产中技术服务</el-menu-item>
                         <el-menu-item index="1-3" >产后技术服务</el-menu-item>
+
                     </el-submenu>
                     <el-submenu index="2" style="height:auto;">
+
                     <template slot="title"><i class="el-icon-message"></i>农产品生产信息服务</template>
                     <el-menu-item-group>
                         <template slot="title">产前信息化</template>
@@ -46,12 +50,16 @@
                     </el-menu-item-group>
                     <el-menu-item-group>
                         <template slot="title">产中信息化</template>
-                        
+                        <el-menu-item index="/info/shaveRecord">整形修剪记录</el-menu-item> <!--shaveRecord-->
+                        <el-menu-item index="/info/diseaseRecord">病虫害记录</el-menu-item><!--diseaseRecord-->
+                        <el-menu-item index="/info/protectRecord">病虫害防治记录</el-menu-item><!--protectRecord-->
+                        <el-menu-item index="/info/preserveRecord">疏花疏果\保花保果记录</el-menu-item><!--preserveRecord-->
                     </el-menu-item-group>
                     <el-menu-item-group>
                         <template slot="title">产后信息化</template>
+                        <el-menu-item>采摘记录</el-menu-item>
                     </el-menu-item-group>
-                    
+
                     </el-submenu>
                 </el-menu>
             </el-col>

@@ -11,6 +11,10 @@ import tsb_info from '../components/TSB_info'
 import plantation from '../components/plantation_info'
 import choosePlant from '../components/choosePlant'
 import placeRecord from '../components/placeRecord'
+import shaveRecord from '../components/shaveRecord'
+import diseaseRecord from '../components/diseaseRecord'
+import protectRecord from '../components/protectRecord'
+import preserveRecord from '../components/preserveRecord'
 Vue.use(Router)
 
 export default new Router({
@@ -51,7 +55,7 @@ export default new Router({
       {
         path: '/info/plantation',
         component: plantation,
-        name: '果园信息',
+        name: '产园信息',
         hidden: true
       },
       {
@@ -63,7 +67,31 @@ export default new Router({
       {
         path: '/info/placeRecord',
         component: placeRecord,
-        name: '果园信息记录表',
+        name: '产园信息记录表',
+        hidden: true
+      },
+      {
+        path: '/info/shaveRecord',
+        component: shaveRecord,
+        name: '产园修剪记录表',
+        hidden: true
+      },
+      {
+        path: '/info/diseaseRecord',
+        component: diseaseRecord,
+        name: '病虫害记录表',
+        hidden: true
+      },
+      {
+        path: '/info/protectRecord',
+        component: protectRecord,
+        name: '病虫害防治记录表',
+        hidden: true
+      },
+      {
+        path: '/info/preserveRecord',
+        component: preserveRecord,
+        name: '保花保果记录表',
         hidden: true
       }]
     }]
