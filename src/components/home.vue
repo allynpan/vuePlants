@@ -52,7 +52,6 @@
                         <template slot="title">产中信息化</template>
                         <el-menu-item index="/info/shaveRecord">整形修剪记录</el-menu-item> <!--shaveRecord-->
                         <el-menu-item index="/info/diseaseRecord">病虫害记录</el-menu-item><!--diseaseRecord-->
-                        <el-menu-item index="/info/protectRecord">病虫害防治记录</el-menu-item><!--protectRecord-->
                         <el-menu-item index="/info/preserveRecord">疏花疏果\保花保果记录</el-menu-item><!--preserveRecord-->
                     </el-menu-item-group>
                     <el-menu-item-group>
@@ -63,18 +62,20 @@
                     </el-submenu>
                 </el-menu>
             </el-col>
-            <el-col :span="20" style="padding:10px">
-                <el-breadcrumb separator-class="el-icon-arrow-right">
-                    <el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
-						{{ item.name }}
-					</el-breadcrumb-item>
-                </el-breadcrumb>
-            </el-col>
-            <el-col :span="20" class="content-wrapper" style="height:100%">
-                    <transition name="fade" mode="out-in">
-                        <router-view> </router-view>
-                    </transition>   
-            </el-col>
+            <el-scrollbar>
+                    <el-col :span="24" style="padding:10px">
+                        <el-breadcrumb separator-class="el-icon-arrow-right">
+                            <el-breadcrumb-item v-for="item in $route.matched" :key="item.path">
+                                {{ item.name }}
+                            </el-breadcrumb-item>
+                        </el-breadcrumb>
+                    </el-col>
+                    <el-col :span="24" class="content-wrapper" style="height:100%">
+                            <transition name="fade" mode="out-in">
+                                <router-view> </router-view>
+                            </transition>   
+                    </el-col>
+            </el-scrollbar>
         </el-row>
     </div>
 </template>
@@ -141,4 +142,14 @@ export default {
     float: right;
     width: 16.667%
 }
+
+.el-scrollbar{
+	height: 100%;
+}
+.el-scrollbar__wrap{
+	overflow: scroll;
+	overflow-x:auto;
+	overflow-y:auto;
+}
+
 </style>
